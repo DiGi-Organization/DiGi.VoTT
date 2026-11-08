@@ -22,12 +22,7 @@ namespace DiGi.VoTT
                 return null;
             }
 
-            JsonSerializerOptions jsonSerializerOptions = new()
-            {
-                WriteIndented = true
-            };
-
-            VoTTModel? result = JsonSerializer.Deserialize<VoTTModel>(json, jsonSerializerOptions);
+            VoTTModel? result = JsonSerializer.Deserialize<VoTTModel>(json);
 
             return result;
         }

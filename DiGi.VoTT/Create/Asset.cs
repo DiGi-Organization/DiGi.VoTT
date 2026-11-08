@@ -1,4 +1,5 @@
 ﻿using DiGi.VoTT.Classes;
+using System.Globalization;
 
 namespace DiGi.VoTT
 {
@@ -36,7 +37,7 @@ namespace DiGi.VoTT
             {
                 format = System.IO.Path.GetExtension(path).Substring(1),
                 name = System.IO.Path.GetFileName(path),
-                path = string.Format("file:{0}", path!.Replace(" ", "%20").Replace(@"\", "/")),
+                path = string.Format(CultureInfo.CurrentCulture, "file:{0}", path!.Replace(" ", "%20").Replace(@"\", "/")),
                 size = Size(path),
                 state = (short)Enums.AssetState.NotVisited,
                 type = (short)Enums.AssetType.Image,

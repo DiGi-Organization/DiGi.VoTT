@@ -22,10 +22,12 @@ namespace DiGi.VoTT
                 return false;
             }
 
+#pragma warning disable CA1869 // one serialization per file written; a shared static instance would be a cache (Coding - General.md 1.20)
             JsonSerializerOptions jsonSerializerOptions = new()
             {
                 WriteIndented = true
             };
+#pragma warning restore CA1869
 
             string json = JsonSerializer.Serialize(voTTModel, jsonSerializerOptions);
 
